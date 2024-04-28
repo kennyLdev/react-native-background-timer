@@ -1,4 +1,4 @@
-package com.ocetnik.timer;
+package io.boterop.timer;
 
 import android.os.Handler;
 import android.os.PowerManager;
@@ -36,7 +36,7 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
         super(reactContext);
         this.reactContext = reactContext;
         this.powerManager = (PowerManager) getReactApplicationContext().getSystemService(reactContext.POWER_SERVICE);
-        this.wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "rohit_bg_wakelock");
+        this.wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "react-native-background-timer:wakelock");
         reactContext.addLifecycleEventListener(listener);
     }
 
